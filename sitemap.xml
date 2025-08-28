@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/404.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/images.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/instructor/reference.html</loc>
+  </url>
+  <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/01_introduction.html</loc>
   </url>
   <url>
@@ -11,6 +44,12 @@
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/images.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/index.html</loc>
@@ -28,13 +67,31 @@
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/python-flavor/key-points.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/python-flavor/profiles.html</loc>
@@ -58,6 +115,12 @@
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/images.html</loc>
+  </url>
+  <url>
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/index.html</loc>
   </url>
   <url>
@@ -76,13 +139,31 @@
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://katrinabrock.github.io/flavordemo/r-flavor/key-points.html</loc>
   </url>
   <url>
     <loc>https://katrinabrock.github.io/flavordemo/r-flavor/profiles.html</loc>
