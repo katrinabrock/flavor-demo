@@ -1,5 +1,19 @@
 # Flavor Proof of Concept
 
+## About
+
+This repo contains a sample lesson that demonstrates the "flavor" feature that could be added to carpentries workbench. Essentially, creating multiple versions of a lesson from the same episode md files. You can see:
+
+- https://katrinabrock.github.io/flavor-demo/r-flavor/
+- https://katrinabrock.github.io/flavor-demo/python-flavor/
+
+There is a dropdown in the top right to switch between them. They have slightly differen content. These two versions of the site are not from forked content, but rather the content for both sites is encoded in [./episodes](./episodes) and a custom version of workbench interprets what goes where.
+
+The feature is far from being ready for prime-time but the core functionality is there. This lesson is built with:
+
+- [katrinabrock/sandpaper@flavor](https://github.com/katrinabrock/sandpaper/tree/flavors)
+- [katrinabrock/varnish@flavor](https://github.com/katrinabrock/varnish/tree/flavors)
+
 ## Lesson-author facing spec
 
 Flavors must be configured in config.yaml:
@@ -30,6 +44,8 @@ flavors:
     title: "Cookies 'N' Cream"
 ```
 
+### Within-episode flavored content
+
 In the episodes, by default content is included in every flavor. To make content within an episode vary by flavor, put it inside a `flavored` block. Inside the `flavored` block, there should be a block for each flavor.
 
 Example:
@@ -41,7 +57,6 @@ Example:
 - Sugar
 - Cream
 - Ice
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::: flavored
 :::::::::::::::::::::::::: vanilla 
 - Vanilla Extract
@@ -61,7 +76,12 @@ Example:
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ```
 
+Will result in each flavor only showing its corresponding final ingredient.
+
+## Full episode specific to some flavors
+
 You can also write an entire episode that only appears in some flavors by adding the `flavors` key to the top yaml with the flavor ids of the flavors it should be included in.
+
 
 ```yaml
 ---
@@ -72,110 +92,63 @@ flavors: [strawberry, blueberry]
 Start by washing the fruit...
 ```
 
-## Todo
+## DONE
 
-- test with translated
-- fix page forward page back
+These parts are already built:
+- Core functionality of within-episode differences accross flavors.
+- Core functionality of flavor-specific episodes
+- Sidebar
+  - Looks correct on episode pages
+  - Redirects correctly
+- Header looks correct and redirects correctly
+- Dropdown is present and works
+
+Only tested with the config in this repo. You are welcome to test with your own config, but be warned there is a high chance it will error without giving you a helpful message as to why.
+
+## TODO
+
+### Known Bugs
+
+- Need to add overall landing page and 404. Currently there is only a landing page/404 for each flavor.
+- Next episode and previous episode links don't work
+- Extraneous commas in non-episode sidebar (e.g. CoC, Instructor Notes etc.)
+- "Key Points", "Extract All Images", "All in One" sidebar is very broken
+- Switching flavors on a flavor-specific episode to a flavor that doesn't have it results in github 404. Should result in either custom 404 or better still redirect to previous/next page on target flavor.
+
+### Known Must-do Tasks
+
+- DRY up code. Especially:
+  - Move "flavors_to_build" logic to one place.
+  - move select_flavor_data from build_html into getter section
+  - generally move more of the flavor-specific logic into setters and getters and less repeating in each function that needs them.
+- Update pegboard
+  - add flavor logic to config checker (if there is such a thing)
+    - valid ids and names
+    - at least one flavor configured to build
+  - add flavor logic to top yaml checker
+    - `flavors` only set in episodes if `flavors` set in config
+  - add flavor logic to div checker
+    - only configured flavors inside a flavored block
+    - nothing inside the flavor block but outside a particular flavor
+    - every configured flavor (or at least those configured to render) are inside 
+- Test more cases
+  - more than two flavors
+  - mix of render and not render
+  - exactly one flavor to render
+  - defaulting to render
+  - Rmd instead of md
+- Build test suite to test this functionality
+- Regression testing - Make sure we didn't break anything that was working before. If these area already included in test, all we need to do is get that test to pass. If not included in a test, test should be written.
+  - simple test with no flavors (I made an attempt not to break things, but didn't actually verify if I succeeded. Probably I didn't.)
+  - translated site
+  - test that setting episode order still works
+
+### Possible Spec Changes
+
 - switch to british spelling for consistency with other terms?
 - rename render=FALSE to hide=TRUE?
-- move select_flavor_data from build_html into getter section
-- add tests
-  - test with >2 flavors
-  - test with exactly one flavor
-  - test flavors not rendered
-  - test render property not there
-- add flavor logic to config checker (if there is such a thing)
-  - valid ids and names
-  - at least one flavor configured to build
-- add flavor logic to top yaml checker
-  - `flavors` only set in episodes if `flavors` set in config
-- add flavor logic to div checker
-  - only configured flavors inside a flavored block
-  - nothing inside the flavor block but outside a particular flavor
-  - every configured flavor (or at least those configured to render) are inside 
-- create "how to add flavors to a lesson" doc and "working with flavored lessons" doc
 
-# Carpentries Template Stuff
+### Documentation
 
-This lesson is a template lesson that uses [The Carpentries Workbench][workbench]. 
-
-## Note about lesson life cycle stage
-Although the `config.yaml` states the life cycle stage as pre-alpha, **the template is stable and ready to use**. The life cycle stage is preset to `"pre-alpha"` as this setting is appropriate for new lessons initialised using the template.
-
-## Create a new repository from this template
-
-To use this template to start a new lesson repository, 
-make sure you're logged into Github.   
-Visit https://github.com/carpentries/workbench-template-md/generate
-and follow the instructions.
-Checking the 'Include all branches' option will save some time waiting for the first website build
-when your new repository is initialised.
-
-If you have any questions, contact [@tobyhodges](https://github.com/tobyhodges)
-
-## Configure a new lesson
-
-Follow the steps below to
-complete the initial configuration of a new lesson repository built from this template:
-
-1. **Make sure GitHub Pages is activated:**
-   navigate to _Settings_,
-   select _Pages_ from the left sidebar,
-   and make sure that `gh-pages` is selected as the branch to build from.
-   If no `gh-pages` branch is available, check the _Actions_ tab to see if the first
-   website build workflows are still running.
-   If they're not running yet, you may need to manually enable them via the _Actions_ tab.
-   The branch should become available when those have completed.
-1. **Adjust the `config.yaml` file:**
-   this file contains global parameters for your lesson site.
-   Individual fields within the file are documented with comments (beginning with `#`)
-   At minimum, you should adjust all the fields marked 'FIXME':
-   - `title`
-   - `created`
-   - `keywords`
-   - `life_cycle` (the default, _pre-alpha_, is the appropriate for brand new lessons)
-   - `contact`
-1. **Annotate the repository** with site URL and topic tags:
-   navigate back to the repository landing page and
-   click on the gear wheel/cog icon (similar to ⚙️) 
-   at the top-right of the _About_ box.
-   Check the "Use your GitHub Pages website" option,
-   and [add some keywords and other annotations to describe your lesson](https://cdh.carpentries.org/the-carpentries-incubator.html#topic-tags)
-   in the _Topics_ field.
-   At minimum, these should include:
-   - `lesson`
-   - the life cycle of the lesson (e.g. `pre-alpha`)
-   - the human language the lesson is written in (e.g. `deutsch`)
-1. **Adjust the 
-   `CITATION.cff`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, and `LICENSE.md` files**
-   as appropriate for your project.
-   -  `CITATION.cff`:
-      this file contains information that people can use to cite your lesson,
-      for example if they publish their own work based on it.
-      You should [update the CFF][cff-sandpaper-docs] now to include information about your lesson,
-      and remember to return to it periodically, keeping it updated as your
-      author list grows and other details become available or need to change.
-      The [Citation File Format home page][cff-home] gives more information about the format,
-      and the [`cffinit` webtool][cffinit] can be used to create new and update existing CFF files.
-   -  `CODE_OF_CONDUCT.md`: 
-      if you are using this template for a project outside The Carpentries,
-      you should adjust this file to describe 
-      who should be contacted with Code of Conduct reports,
-      and how those reports will be handled.
-   -  `CONTRIBUTING.md`:
-      depending on the current state and maturity of your project,
-      the contents of the template Contributing Guide may not be appropriate.
-      You should adjust the file to help guide contributors on how best
-      to get involved and make an impact on your lesson.
-   -  `LICENSE.md`:
-      in line with the terms of the CC-BY license,
-      you should ensure that the copyright information 
-      provided in the license file is accurate for your project.
-1. **Update this README with 
-   [relevant information about your lesson](https://carpentries.github.io/lesson-development-training/collaborating-newcomers.html#readme)**
-   and delete this section.
-
-[cff-home]: https://citation-file-format.github.io/
-[cff-sandpaper-docs]:  https://carpentries.github.io/sandpaper-docs/editing.html#making-your-lesson-citable
-[cffinit]: https://citation-file-format.github.io/cff-initializer-javascript/
-[workbench]: https://carpentries.github.io/sandpaper-docs/
+- "how to add flavors to a lesson" doc
+- "working with flavored lessons" doc

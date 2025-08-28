@@ -2,6 +2,8 @@
 title: "Licenses"
 ---
 
+This work is derived from work that is (c) the The Carpentries, and likewise under CC 4.0.
+
 ## Instructional Material
 
 All Carpentries (Software Carpentry, Data Carpentry, and Library Carpentry)

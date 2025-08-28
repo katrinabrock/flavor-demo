@@ -39,19 +39,16 @@ documentation][template-doc].
 
 ### Where to Contribute
 
-1. If you wish to change this lesson, add issues and pull requests here.
-2. If you wish to change the template used for workshop websites, please refer
-   to [The Workbench documentation][template-doc].
+1. If you wish to change this lesson (ie the demo), add issues and pull requests here.
+2. To contribute to this possible workbench feature, file issues or make PRs against and/or katrinabrock/sandpaper@flavors or katrinabrock/varnish@flavors.
 
+This is feature is not endorsed or requested by Carpentries. It's something I've worked on on my own so contributing to my branches does not guarentee that your code will be encorperated to the main Carpentries codebase.
 
 ### What to Contribute
 
-There are many ways to contribute, from writing new exercises and improving
-existing ones to updating or filling in the documentation and submitting [bug
-reports][issues] about things that do not work, are not clear, or are missing.
-If you are looking for ideas, please see [the list of issues for this
-repository][repo-issues], or the issues for [Data Carpentry][dc-issues],
-[Library Carpentry][lc-issues], and [Software Carpentry][swc-issues] projects.
+See the TODO list in the README for things that need doing.
+
+If you notice a bug/gap that is not already listed there, feel free to file and issue.
 
 Comments on issues and reviews of pull requests are just as welcome: we are
 smarter together than we are on our own. **Reviews from novices and newcomers
@@ -61,17 +58,7 @@ fresh eyes are always welcome.
 
 ### What *Not* to Contribute
 
-Our lessons already contain more material than we can cover in a typical
-workshop, so we are usually *not* looking for more concepts or tools to add to
-them. As a rule, if you want to introduce a new idea, you must (a) estimate how
-long it will take to teach and (b) explain what you would take out to make room
-for it. The first encourages contributors to be honest about requirements; the
-second, to think hard about priorities.
-
-We are also not looking for exercises or other material that only run on one
-platform. Our workshops typically contain a mixture of Windows, macOS, and
-Linux users; in order to be usable, our lessons must run equally well on all
-three.
+It probably isn't terribly worthwhile to finetune the contents of the lesson itself since in only serves as a demo of workbench features. I am willing to accept such contributions, but they probably aren't worth your time.
 
 ### Using GitHub
 
@@ -89,21 +76,17 @@ use [GitHub flow][github-flow] to manage changes:
 
 NB: The published copy of the lesson is usually in the `main` branch.
 
-Each lesson has a team of maintainers who review issues and pull requests or
-encourage others to do so. The maintainers are community volunteers, and have
-final say over what gets merged into the lesson.
-
 ### Other Resources
 
 The Carpentries is a global organisation with volunteers and learners all over
 the world. We share values of inclusivity and a passion for sharing knowledge,
 teaching and learning. There are several ways to connect with The Carpentries
 community listed at <https://carpentries.org/connect/> including via social
-media, slack, newsletters, and email lists. You can also [reach us by
+media, slack, newsletters, and email lists. You can also [reach Carpentries Core by
 email][contact].
 
-[repo]: https://example.com/FIXME
-[repo-issues]: https://example.com/FIXME/issues
+[repo]: https://github.com/katrinabrock/flavor-demo
+[repo-issues]: https://github.com//katrinabrock/flavor-demo/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry

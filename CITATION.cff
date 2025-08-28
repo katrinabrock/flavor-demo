@@ -13,8 +13,8 @@ message: >-
   training material.
 type: dataset
 authors:
-  - given-names: FIXME
-    family-names: FIXME
+  - given-names: Katrina
+    family-names: Brock
 abstract: >-
   FIXME Replace this with a short abstract describing the
   lesson, e.g. its target audience and main intended
