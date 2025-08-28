@@ -39,7 +39,7 @@ life_cycle: 'pre-alpha' # FIXME
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/katrinabrock/flavordemo'
+source: 'https://github.com/katrinabrock/flavor-demo'
 
 # Default branch of your lesson
 branch: 'main'
@@ -69,8 +69,6 @@ contact: 'kbrock@ab.mpg.de'
 # - one-learner.md
 # - another-learner.md
 
-# Order of episodes in your lesson
-  
 flavors:
   r-flavor:
     title: R
@@ -79,9 +77,12 @@ flavors:
     title: Python
     render: yes
 
+# Order of episodes in your lesson
+  
 episodes: 
 - 01_introduction.md
 - 02_r_only.md
+- 02_py_only.md
 
 # Information for Learners
 learners: 
