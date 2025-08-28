@@ -1,4 +1,101 @@
-# The Carpentries Workbench Template Markdown Lesson
+# Flavor Proof of Concept
+
+## Lesson-author facing spec
+
+Flavors must be configured in config.yaml:
+
+```yaml
+flavors:
+  - <flavor id>:
+    title: <User-facing name>
+    render: FALSE
+```
+
+flavor id (key) and `title` are required. `render` is optional and defaults to `TRUE`
+
+Example:
+
+```yaml
+flavors:
+  - vanilla:
+    title: "Vanilla"
+    render: FALSE
+  - chocolate;
+    title: "Chocolate"
+  - strawberry:
+    title: "Strawberry"
+  - blueberry:
+    title: "Blueberry"
+  - cookiesncream:
+    title: "Cookies 'N' Cream"
+```
+
+In the episodes, by default content is included in every flavor. To make content within an episode vary by flavor, put it inside a `flavored` block. Inside the `flavored` block, there should be a block for each flavor.
+
+Example:
+
+```markdown
+## Ingredients
+
+- Milk
+- Sugar
+- Cream
+- Ice
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::: flavored
+:::::::::::::::::::::::::: vanilla 
+- Vanilla Extract
+:::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::: chocolate
+- Chocolate Powder
+::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::: strawberry
+- Fresh Strawberries
+:::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::: strawberry
+- Fresh Blueberries
+:::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::: cookiesncream
+- "Sandwich" cookies
+::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+```
+
+You can also write an entire episode that only appears in some flavors by adding the `flavors` key to the top yaml with the flavor ids of the flavors it should be included in.
+
+```yaml
+---
+title: "Prepping the Fruit"
+flavors: [strawberry, blueberry] 
+---
+
+Start by washing the fruit...
+```
+
+## Todo
+
+- test with translated
+- fix page forward page back
+- switch to british spelling for consistency with other terms?
+- rename render=FALSE to hide=TRUE?
+- move select_flavor_data from build_html into getter section
+- add tests
+  - test with >2 flavors
+  - test with exactly one flavor
+  - test flavors not rendered
+  - test render property not there
+- add flavor logic to config checker (if there is such a thing)
+  - valid ids and names
+  - at least one flavor configured to build
+- add flavor logic to top yaml checker
+  - `flavors` only set in episodes if `flavors` set in config
+- add flavor logic to div checker
+  - only configured flavors inside a flavored block
+  - nothing inside the flavor block but outside a particular flavor
+  - every configured flavor (or at least those configured to render) are inside 
+- create "how to add flavors to a lesson" doc and "working with flavored lessons" doc
+
+# Carpentries Template Stuff
 
 This lesson is a template lesson that uses [The Carpentries Workbench][workbench]. 
 

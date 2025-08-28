@@ -4,7 +4,7 @@ teaching: 10 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - How do you write a lesson using Markdown and `{sandpaper}`?
 
@@ -16,6 +16,31 @@ exercises: 2 # exercise time in minutes
 - Demonstrate how to include pieces of code, figures, and nested challenge blocks
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+## Flavored
+
+:::::::::::::::::::::::::::::::::::: flavored
+
+::::::::::::::::: r-flavor
+
+```r
+paste("This", "new", "lesson", "looks", "good")
+```
+
+:::::::::::::::::::::::::::
+
+::::::::::::::::: python-flavor
+
+```python
+' '.join(['This', 'new', 'lesson', 'looks', 'good'])
+```
+
+::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Introduction
 
