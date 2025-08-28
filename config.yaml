@@ -15,16 +15,21 @@
 carpentry: 'incubator'
 
 # Alt-text description of the lesson.
-carpentry_description: 'Lesson Description'
+carpentry_description: |
+  This lesson is build with a custom workbench.
+  It is designed as a proof of concept of "flavored" lesson feature.
+  In other words, the idea of building multiple versions of lesson from
+  the same episode markdown. This feature is **not** yet implimented
+  in mainline workbench. It is very much a work in progress idea.
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Flavored Lesson Demo'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2025-08-26
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'workbench, sandpaper, varnish, proof-of-concept'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
@@ -34,13 +39,13 @@ life_cycle: 'pre-alpha' # FIXME
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/katrinabrock/flavordemo'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'kbrock@ab.mpg.de'
 
 # Navigation ------------------------------------------------
 #
@@ -65,8 +70,18 @@ contact: 'team@carpentries.org' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
+  
+flavors:
+  r-flavor:
+    title: R
+    render: yes
+  python-flavor:
+    title: Python
+    render: yes
+
 episodes: 
-- introduction.md
+- 01_introduction.md
+- 02_r_only.md
 
 # Information for Learners
 learners: 
@@ -81,5 +96,8 @@ profiles:
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
+
+sandpaper: katrinabrock/sandpaper@flavors
+varnish: katrinabrock/varnish@flavors
 
 
