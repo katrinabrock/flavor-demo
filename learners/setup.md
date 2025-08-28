@@ -13,7 +13,7 @@ The feature is far from being ready for prime-time but the core functionality is
 
 The `config.yaml` for this lesson has a block like this:
   
-```{yaml}
+```yaml
 flavors:
   r-flavor:
     title: R
