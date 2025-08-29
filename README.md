@@ -148,6 +148,7 @@ Only tested with the config in this repo. You are welcome to test with your own 
 
 - switch to british spelling for consistency with other terms?
 - rename render=FALSE to hide=TRUE?
+- have an option in config to render a flavor, but hide it from the dropdown (so as not to confuse learners)
 
 ### Documentation
 
