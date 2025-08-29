@@ -137,6 +137,7 @@ Only tested with the config in this repo. You are welcome to test with your own 
   - exactly one flavor to render
   - defaulting to render
   - Rmd instead of md
+  - test flavored objective, questions etc.
 - Build test suite to test this functionality
 - Regression testing - Make sure we didn't break anything that was working before. If these area already included in test, all we need to do is get that test to pass. If not included in a test, test should be written.
   - simple test with no flavors (I made an attempt not to break things, but didn't actually verify if I succeeded. Probably I didn't.)
